@@ -1,0 +1,28 @@
+SpringMVC
+	ModelAndView
+		View
+	String
+		Model
+			ModelMap
+	Void
+	Map
+
+@Configuration
+	@ConfigurationProperties
+
+JPA
+	@Entity
+        @Table
+        @Id
+        @Column
+	JpaRepository
+	JpaSpecificationExecutor
+
+Mybatis
+	@Mapper
+		@Select
+		@Insert
+		@Update
+		@Delete
+
+@Transactional
