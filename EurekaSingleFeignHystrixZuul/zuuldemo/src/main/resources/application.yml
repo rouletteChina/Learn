@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+zuul:
+  ignoredServices: '*'
+  routes:
+    users:
+      path: /consumer/**
+      serviceId: service-consumer
+ribbon:
+  eureka:
+    enabled: false
+service-consumer:
+  ribbon:
+    listOfServers: http://localhost:8080,http://localhost:8081
+#zuul.PreZuulFilter.pre.disable: true
+#注意禁用自定义Filter后的控制台输出
+---
+spring:
+  profiles: zuul1
+server:
+  port: 8090
+---
+spring:
+  profiles: zuul2
+server:
+  port: 8091
