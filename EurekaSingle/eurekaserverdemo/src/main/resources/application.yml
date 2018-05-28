@@ -1,0 +1,21 @@
+server:
+  port: 8761
+
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+eureka:
+  datacenter: cloud
+  environment: product
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: false
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://admin:admin@${eureka.instance.hostname}:${server.port}/eureka/
+
