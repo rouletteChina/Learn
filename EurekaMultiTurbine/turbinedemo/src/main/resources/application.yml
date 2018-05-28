@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: hystrix-turbine
+
+server:
+  port: 8031
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+turbine.:
+  app-config: service-client
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+turbine:
+  aggregator:
+    cluster-config:
+#  cluster-name-expression: "'default'"
+
+#turbine.instanceUrlSuffix.service-client: /ribbon/hystrix.stream
+#
+#logging:
+#  level:
+#    root: INFO
+#    com.netflix.turbine.monitor: DEBUG
